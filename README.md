@@ -1,6 +1,8 @@
 *This is extremely old and I wrote it early in my career, used more for posterity than actual use.*
 
-# Technolust v1.0 - Copyright 2004 Micheal Waltz - ecliptik@gmail.com - http://www.ecliptik.com
+# Technolust
+
+Technolust v1.0 - Copyright 2004 Micheal Waltz - ecliptik@gmail.com - http://www.ecliptik.com
 
 ## ABOUT:
 Technolust is a simple and scalable web content creation system using PHP and MySQL licensed under the GPL. It is not a blogging system, but geared for the creation of a page to distribute information in a simple category/articles system. This is my first PHP/MySQL application, and I would appreciate any code suggestions more experienced developers may have.
