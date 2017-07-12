@@ -1,0 +1,103 @@
+Installing Technolust v1.0 - Copyright 2004 Micheal Waltz - ecliptik@gmail.com - http://www.ecliptik.com
+
+REQUIREMENTS:
+
+* Apache or IIS webserver with PHP 4.0 or higher enabled
+* MySQL Database server version 3.23 or higher
+
+
+NOTES:
+This was developed on a GNU/Linux system running Apache 2 with PHP 4.8 and MySQL 4, but any recent versions of Apache, Mysql, PHP, and IIS regardless of Operating System should work without any problems.
+
+Begin by untarring the technolust.tar.gz in a temporary directory, the contents are as follows:
+
+README - Basic information about this application
+INSTALL - This file
+/includes - The actual working PHP files
+/webroot - Web viewable files
+/webroot/images - Images for default buttons
+
+You need to know where you web viewable directory is, usually this is /var/www, /var/www/apache2-default on unix/linux/bsd systems. Consult your distributions documentation for the exact location. Windows systems can find this location in the IIS snap-in. If you have any files named the same as the ones in this application they will be overwritten, so be careful not to copy over something you want to keep.
+
+
+WEBPAGE INSTALLATION
+1. Edit the the header.php file in the includes directory, changing the Site Wide variables and mysql_password.
+
+2. Move the entire includes directory to the directory underneath the web viewable one. Such as if the web viewable one is /var/www, move includes to /var.
+
+	exp: /tmp/technolust/ $>mv -R includes /var/
+
+3. Move the files and images directory in webroot to your systems web viewable directory, such as /var/www.
+
+	exp: /tmp/technolust/webroot/ $> mv -R * /var/www/
+
+
+MYSQL INSTALLATION:
+Make sure you have mysql 3.23 or higher and the mysql daemon is running before trying these steps
+
+Begin at your normal command line, then copy each command as they are shown
+
+1. Log into your mysql database as root, if you do not have root access or creation privledges, please consult your system administrator.
+mysql -u root -p
+
+2. Run this command to create the webpage database
+create database webpage;
+
+3. Give permissions to the webmaster user and create a password
+GRANT ALL ON webpage.* TO webmaster IDENTIFIED BY 'somepassword'
+
+4. Use the just created database 
+use webpage;
+
+5. Create the category table
+create table category (cat_id int unsigned not null auto_increment primary key, cat_name varchar(90) not null, cat_sum text not null, fulltext(cat_name, cat_sum));
+
+6. Create the articles table
+create table articles (art_id int unsigned not null auto_increment primary key, cat_id int unsigned not null, art_title varchar(90) not null, art_date varchar(60) not null, art_sum text not null, art_body text not null, fulltext(art_title, art_sum, art_body));
+
+7. Quit mysql
+quit;
+
+8. Log back into mysql as the webmaster user from the command line
+mysql -u webmaster -p
+
+9. Use the webpage database
+use webpage;
+
+10. Describe the tables we just created
+desc category;
+desc articles;
+
+11. Check to make sure they match to these:
+
+category table
++----------+------------------+------+-----+---------+----------------+
+| Field    | Type             | Null | Key | Default | Extra          |
++----------+------------------+------+-----+---------+----------------+
+| cat_id   | int(10) unsigned |      | PRI | NULL    | auto_increment |
+| cat_name | varchar(90)      |      | MUL |         |                |
+| cat_sum  | text             |      |     |         |                |
++----------+------------------+------+-----+---------+----------------+
+3 rows in set (0.04 sec)
+
+articles table
++-----------+------------------+------+-----+---------+----------------+
+| Field     | Type             | Null | Key | Default | Extra          |
++-----------+------------------+------+-----+---------+----------------+
+| art_id    | int(10) unsigned |      | PRI | NULL    | auto_increment |
+| cat_id    | int(10) unsigned |      |     | 0       |                |
+| art_title | varchar(90)      |      | MUL |         |                |
+| art_date  | varchar(60)      |      |     |         |                |
+| art_sum   | text             |      |     |         |                |
+| art_body  | text             |      |     |         |                |
++-----------+------------------+------+-----+---------+----------------+
+6 rows in set (0.00 sec)
+
+12. quit mysql
+quit;
+
+
+FINISHING UP:
+Once you've copied the PHP files and created your mysql database, point your webbrowser to http://127.0.0.1 or the webserver you installed on, to test the page comes up correctly.
+
+To add/edit content, point your webbrowser to http://127.0.0.1/indexadmin.php or the webserver you installed on, and test adding/editing stories. The first category you make will become the front page and you cannot add any articles below.

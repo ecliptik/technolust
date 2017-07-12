@@ -1,0 +1,124 @@
+/* CSS file for technolust */
+
+body{background-color: #EFEFEF;
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 1em;
+color: #000000;}
+
+/*The container element that goes around all other elements, controls the width and minium width*/
+#container{max-width: 100%;
+min-width: 47em;}
+
+/*Determines the background color, heigh, text-alignment, and where to put the border on the header element*/
+#header{background-color: #F7CD7F;
+height: 6em;
+text-align: left;
+border-style: solid;
+border-width: 0 0 2px 0;}
+
+/*The style for the h1 tag in the header element*/
+#header h1{ color: #FFFFFF;
+font-size: 2em;
+padding-left: .5em;
+margin: 0;}
+
+/*The style for the h2 tag in the header element*/
+#header h2{font-size: 1em;
+font-style: italic;
+padding: 1em 1em 0em 1em;
+margin: 0;}
+
+/*Attributes for navigation element*/
+#nav{margin: 0;
+padding: 1em 0 0 0;
+background-color: #F1F7FE;
+float: left;
+width: 10em;
+min-width: 10em;
+min-height: 30em;
+border-style: solid;
+border-width: 0 2px 2px 0;}
+
+/*Paragraph properties for p tags in the navigation element*/
+#nav p{font-size: .8em;
+color: #666;
+text-align: center;}
+
+/*Image properties for img tages in the navigation elements*/
+#nav img{height: 31px;
+width: 88px;}
+
+/*Attributes for body element*/
+#content{margin-left: 10em;
+padding: 0 0 0 1em;
+background-color: #FFF;
+min-width: 20em;
+min-height: 31em;
+border-style: solid;
+border-width: 0 0 2px 2px;}
+
+/*Heading properties for h1 tags in body element*/
+#content h1{margin: 0;
+padding: .5em .5em 0 0;
+}
+
+/*Heading properties for h1 tags in body element*/
+#content h2{margin: 0;
+padding: .5em 0 0 0;
+font-size: 1.5em;
+}
+
+/*Heading properties for h1 tags in body element*/
+#content h3{margin: 0;
+padding: .5em 0 0 0;
+font-size: .7em;
+text-decoration: italic;}
+
+/*Paragraph properties for p tags in the body element*/
+#content p{padding: 1em .5em 0em 0;}
+
+/*Image properties for img tages in the body elements, and to float them right of other objects such as a text block*/
+#content img.floatright{ float: right;
+margin: 0 0 1em 1em;
+border: 1px solid #666;
+padding: 2px;}
+
+/*Image properties for img tages in the body elements, and to float them left of other objects such as a text block*/
+#content img.floatleft{ float: left;
+margin: 1em 1em 0 0;
+border: 1px solid #666;
+padding: 2px;}
+
+/*Un-numbered list attributes for the navigation list, strips off the bullets and determins positiong and margins*/
+ul#navlist{text-align: center;
+list-style: none;
+padding: 0;
+margin: 0 auto;
+width: 10em;}
+
+/*Properties for each li tag*/
+ul#navlist li{display: block;
+margin: 0;
+padding: 0;}
+
+/*What style to give to a selected li*/
+ul#navlist li.selected{font-weight: bold;}
+
+/*Properties of a links in an li*/
+ul#navlist li a{display: block;
+width: 10em;
+padding: .5em 0 0 0em;
+}
+a { color: #0C6E97;
+text-decoration: none; }
+
+/*Underline a hovered link on the entire page*/
+a:hover {text-decoration: underline;}
+
+/*Give the hr element a little more style*/
+hr {border: dotted;
+border-width: 1px;}
+
+/*Strip borders from images that are links on the entire page*/
+img {border-style: none;}
+}
