@@ -23,7 +23,7 @@ Features:
 * Renders correctly in 800x600+ resolutions and across all major web browsing platforms
 * 100% valid XHTML 1.1 Strict and CSS v2
 
-![Technolust Screenshot](https://raw.githubusercontent.com/ecliptik/technolust/blob/master/technolust.png)
+![Technolust Screenshot](https://github.com/ecliptik/technolust/raw/master/technolust.png)
 
 ## USING:
 
